@@ -14,10 +14,13 @@
 <h4>Extracting string methods</h4>
 <p>There are 4 methods of extracting string characters<br>
 1. The at (position)method<br>
-- Returns the character at the specified index position in a string<br>
+- Returns the character at the specified index position of a string<br>
+- It is different from the charAt(property) method because it allows the use of<br>
+  negative indexes<br>
 2. The charAt(position) method<br>
-- Returns the code of the character at the specified index of a string <br>
+- Returns the character at the specified index position in a string<br>
 3. The charCodeAt(position)method<br>
+- Returns the code of the character at the specified index of a string <br>
 4. Using property access [] like arrays</p>
 <h4>the charAt(position)method</h4>
 example<br>
@@ -26,9 +29,14 @@ example<br>
 //output= H<br>
 <h4>the charCodeAt(position)method</h4>
 example
-<p id="demo"></p>
     let str1 = "Monicah";<br
     document.getElementById("demo").innerHTML = str1.charCodeAt(1);<br>
        //output =  111<br>
+       <h4>the at(property) method</h4>
+       example<br>
+        let name = "Education";<br>
+        let letter = name.at(3);<br>
+        document.getElementById('demo').innerHTML=letter;<br>
+        //output = c<br>
 </body>
 </html>
