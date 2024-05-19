@@ -13,7 +13,7 @@ var is_array = function(input) {
 };
 
 // Testing the function with a string
-console.log(is_array('w3resource'));
+console.log(is_array('Education'));
 
 // Testing the function with an array
 console.log(is_array([1, 2, 4, 0]));
