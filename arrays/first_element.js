@@ -8,4 +8,4 @@ is_array = function(input) {
     return false;   
       };
   console.log(is_array('Education'));
-  console.log(is_array([1, 2, 4, 0]));
+
