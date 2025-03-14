@@ -24,8 +24,11 @@ function createBankAccount(initialBalance) {
                 console.log(`Withdrawn from account: $${amount} Balance: $${balance}`)
             }
 
+        },
+        checkBalance: function () {
+            return balance;
         }
     }
 }
 let myAccount = createBankAccount(1000);
-myAccount.withdraw(1900)
+console.log(`current balance $${myAccount.checkBalance()}`)
