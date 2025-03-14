@@ -15,8 +15,17 @@ function createBankAccount(initialBalance) {
         deposit: function (amount) {
             balance += amount;
             console.log(`Deposit amount: $${amount}, Current balance: $${balance}`)
+        },
+        withdraw: function (amount) {
+            if (amount > balance) {
+                console.log("insufficient funds");
+            } else {
+                balance -= amount
+                console.log(`Withdrawn from account: $${amount} Balance: $${balance}`)
+            }
+
         }
     }
 }
 let myAccount = createBankAccount(1000);
-myAccount.deposit(700);
+myAccount.withdraw(1900)
