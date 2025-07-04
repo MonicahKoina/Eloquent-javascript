@@ -2,7 +2,7 @@ let productCard = document.getElementById("productCard");
 let searchBar = document.getElementById("searchBar");
 let allProducts = [];
 
-async function fetchProducts() {
+async function fetchProducts(PostProduct) {
     let url = "https://fakestoreapi.com/products";
     const queryParams = {
         limit: 5
@@ -10,18 +10,27 @@ async function fetchProducts() {
     try {
         let queryString = new URLSearchParams(queryParams).toString();
         let apiEmbed = `${url}?${queryString}`
-        let response = await fetch(apiEmbed);
+        let response = await fetch(apiEmbed, {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(PostProduct)
+        });
         let data = await response.json();
         console.log(data);
         allProducts = data;
 
         console.log(queryString)
-        renderProducts(data);
+        // renderProducts(data);
 
     } catch (error) {
         console.log("Fetching products failed", error);
     }
 }
+let newPost = {
+    id: crypto.randomUUID(),
+    title: "BEADS"
+}
+fetchProducts(newPost)
 function renderProducts(products) {
     productCard.innerHTML = products.map((item) => {
         return `
