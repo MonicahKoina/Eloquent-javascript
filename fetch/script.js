@@ -3,12 +3,19 @@ let searchBar = document.getElementById("searchBar");
 let allProducts = [];
 
 async function fetchProducts() {
+    let url = "https://fakestoreapi.com/products";
+    const queryParams = {
+        limit: 5
+    }
     try {
-        let url = "https://fakestoreapi.com/products";
-        let response = await fetch(url);
+        let queryString = new URLSearchParams(queryParams).toString();
+        let apiEmbed = `${url}?${queryString}`
+        let response = await fetch(apiEmbed);
         let data = await response.json();
         console.log(data);
         allProducts = data;
+
+        console.log(queryString)
         renderProducts(data);
 
     } catch (error) {
